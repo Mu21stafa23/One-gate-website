@@ -121,13 +121,17 @@ export default function Navbar() {
                 <a
                   key={item.name}
                   href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
                   className="block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-100"
                 >
                   {item.name}
                 </a>
               ))}
               <button
-                onClick={toggleLanguage}
+                onClick={() => {
+                  toggleLanguage()
+                  setMobileMenuOpen(false)
+                }}
                 className="block w-full text-left rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-100"
               >
                 {language === 'en' ? 'العربية' : 'English'}
