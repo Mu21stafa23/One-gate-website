@@ -14,42 +14,42 @@ export const sectorsData = {
       name: "Airport Services",
       description: "Comprehensive aviation and ground handling services.",
       image: airportImage,
-      href: "/sectors/airport-services"
+      href: "/sectors/airport-services.com"
     },
     {
       id: 2,
       name: "Cold Storage",
       description: "State-of-the-art temperature-controlled storage solutions.",
       image: coldStorageImage,
-      href: "/sectors/cold-storage"
+      href: "/sectors/cold-storage.com"
     },
     {
       id: 3,
       name: "Fish Export",
       description: "Quality seafood export with global reach.",
       image: fishExportImage,
-      href: "/sectors/fish-export"
+      href: "/sectors/fish-export.com"
     },
     {
       id: 4,
       name: "Fruits & Vegetables",
       description: "Fresh produce distribution and export services.",
       image: fruitsVegetablesImage,
-      href: "/sectors/fruits-vegetables"
+      href: "/sectors/fruits-vegetables.com"
     },
     {
       id: 5,
       name: "Hotel Services",
       description: "Premium hospitality and accommodation solutions.",
       image: hotelImage,
-      href: "/sectors/hotel-services"
+      href: "/sectors/hotel-services.com"
     },
     {
       id: 6,
       name: "Marketing & Advertising",
       description: "Comprehensive strategies to boost your brand presence.",
       image: marketingImage,
-      href: "/sectors/marketing-advertising"
+      href: "/sectors/marketing-advertising.com"
     }
   ]
 };

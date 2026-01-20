@@ -61,14 +61,6 @@
   animation: scroll 40s linear infinite;
 }
 
-.animate-scroll:hover {
-  animation-play-state: paused;
-}
-
-.animate-scroll:hover {
-  animation-play-state: paused;
-}
-
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);

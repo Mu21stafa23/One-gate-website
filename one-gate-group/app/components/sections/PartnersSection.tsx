@@ -43,19 +43,17 @@ export default function PartnersSection() {
           className="relative overflow-hidden py-8"
           data-aos="fade-up"
           data-aos-delay="400"
+          style={{ pointerEvents: 'none' }}
         >
           {/* Scrolling Logos */}
-          <div className="flex animate-scroll gap-16 items-center min-w-max">
+          <div className="flex animate-scroll gap-16 items-center min-w-max" style={{ animationPlayState: 'running' }}>
             {/* First set of logos */}
             {partnersData.partners.map((partner) => (
-              <Link
+              <div
                 key={`${partner.id}-1`}
-                href={partner.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0 hover:scale-110 transition-transform duration-300"
+                className="flex-shrink-0"
               >
-                <div className="relative h-24 w-44 transition-all duration-300">
+                <div className="relative h-24 w-44">
                   <Image
                     src={partner.logo}
                     alt={partner.name}
@@ -63,18 +61,15 @@ export default function PartnersSection() {
                     className="object-contain"
                   />
                 </div>
-              </Link>
+              </div>
             ))}
             {/* Duplicate set for seamless loop */}
             {partnersData.partners.map((partner) => (
-              <Link
+              <div
                 key={`${partner.id}-2`}
-                href={partner.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0 hover:scale-110 transition-transform duration-300"
+                className="flex-shrink-0"
               >
-                <div className="relative h-24 w-44 transition-all duration-300">
+                <div className="relative h-24 w-44">
                   <Image
                     src={partner.logo}
                     alt={partner.name}
@@ -82,7 +77,7 @@ export default function PartnersSection() {
                     className="object-contain"
                   />
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
