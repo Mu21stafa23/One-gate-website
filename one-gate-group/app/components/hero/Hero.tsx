@@ -19,16 +19,16 @@ export default function Hero() {
 
   return (
     <>
-      <div className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-[url('/images/hero/hero%20sudan.jpg')] bg-cover bg-center bg-fixed">
+      <div className="relative w-full min-h-screen h-screen flex items-center justify-center overflow-hidden bg-[url('/images/hero/hero%20sudan.jpg')] bg-cover bg-center sm:bg-fixed">
         <Navbar />
         {/* Color overlay */}
         <div className="absolute inset-0 bg-black/40 z-0" />
         
         {/* Content */}
-        <div className="relative z-10 w-full h-full flex items-center justify-center px-6 lg:px-12">
-          <div className="max-w-4xl text-center">
+        <div className="relative z-10 w-full h-full flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-20 sm:py-0">
+          <div className="max-w-4xl text-center w-full">
             <h1 
-              className="text-white text-7xl font-bold text-shadow-white leading-tight mb-8"
+              className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-shadow-white leading-tight mb-6 sm:mb-8 px-2"
               data-aos="fade-up"
               data-aos-delay="200"
             >
@@ -36,7 +36,7 @@ export default function Hero() {
             </h1>
             {/* About Company Button */}
             <button 
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 border-2 border-white rounded-lg text-white text-lg font-semibold hover:bg-gray-200 hover:text-black transition-all duration-300 min-w-64"
+              className="inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 border-2 border-white rounded-lg text-white text-base sm:text-lg font-semibold hover:bg-gray-200 hover:text-black transition-all duration-300 w-full sm:w-auto sm:min-w-64 max-w-xs sm:max-w-none mx-auto"
               data-aos="fade-up"
               data-aos-delay="400"
             >
