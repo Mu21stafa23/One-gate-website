@@ -132,7 +132,7 @@ const translations = {
     },
     footer: {
       company: 'One Gate Group',
-      description: 'Your trusted partner for comprehensive business solutions across multiple sectors in Djibouti and the region.',
+      description: 'Your trusted partner for comprehensive business solutions across multiple sectors in sudan and the region.',
       quickLinks: 'Quick Links',
       ourSectors: 'Our Sectors',
       contactInfo: 'Contact Info',
@@ -215,7 +215,7 @@ const translations = {
     },
     footer: {
       company: 'مجموعة وان جيت',
-      description: 'شريكك الموثوق لحلول الأعمال الشاملة في قطاعات متعددة في جيبوتي والمنطقة.',
+      description: 'شريكك الموثوق لحلول الأعمال الشاملة في قطاعات متعددة في السودان والمنطقة.',
       quickLinks: 'روابط سريعة',
       ourSectors: 'قطاعاتنا',
       contactInfo: 'معلومات الاتصال',

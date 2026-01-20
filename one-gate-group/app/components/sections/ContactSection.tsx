@@ -189,7 +189,7 @@ export default function ContactSection() {
                     <option>US</option>
                     <option>CA</option>
                     <option>EU</option>
-                    <option>SD</option>
+                    <option>Sudan</option>
                   </select>
                   <ChevronDownIcon
                     aria-hidden="true"
