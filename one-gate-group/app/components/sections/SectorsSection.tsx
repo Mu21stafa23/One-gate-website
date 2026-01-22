@@ -32,18 +32,18 @@ export default function SectorsSection() {
   };
   
   return (
-    <section className="py-16 lg:py-20 bg-white">
+    <section className="py-16 lg:py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 
-            className="text-4xl lg:text-5xl font-bold text-black mb-4"
+            className="text-4xl lg:text-5xl font-bold text-black dark:text-white mb-4"
             data-aos="fade-up"
           >
             {t('sectors.title')}
           </h2>
           <p 
-            className="text-lg text-gray-700 max-w-3xl mx-auto"
+            className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto"
             data-aos="fade-up"
             data-aos-delay="200"
           >

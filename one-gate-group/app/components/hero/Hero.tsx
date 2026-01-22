@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="relative w-full min-h-screen h-screen flex items-center justify-center overflow-hidden bg-[url('/images/hero/hero%20sudan.jpg')] bg-cover bg-center sm:bg-fixed">
         <Navbar />
         {/* Color overlay */}
-        <div className="absolute inset-0 bg-black/40 z-0" />
+        <div className="absolute inset-0 bg-black/40 dark:bg-black/60 z-0 transition-colors duration-300" />
         
         {/* Content */}
         <div className="relative z-10 w-full h-full flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 py-20 sm:py-0">

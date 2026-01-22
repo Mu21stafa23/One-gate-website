@@ -23,6 +23,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       // Keep LTR layout for both languages - only change text content
       document.documentElement.dir = 'ltr';
       document.documentElement.lang = savedLanguage;
+      
+      // Apply Cairo font for Arabic
+      if (savedLanguage === 'ar') {
+        document.body.style.fontFamily = 'var(--font-cairo), system-ui, sans-serif';
+      } else {
+        document.body.style.fontFamily = 'var(--font-inter), system-ui, sans-serif';
+      }
     }
   }, []);
 
@@ -32,6 +39,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     // Keep LTR layout for both languages - only change text content
     document.documentElement.dir = 'ltr';
     document.documentElement.lang = lang;
+    
+    // Apply Cairo font for Arabic
+    if (lang === 'ar') {
+      document.body.style.fontFamily = 'var(--font-cairo), system-ui, sans-serif';
+    } else {
+      document.body.style.fontFamily = 'var(--font-inter), system-ui, sans-serif';
+    }
   };
 
   const t = (key: string): string => {

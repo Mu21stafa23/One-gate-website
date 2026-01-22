@@ -35,25 +35,25 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="transition-colors duration-300">
         <section id="home">
           <Hero />
         </section>
-        <section id="about">
+        <section id="about" className="dark:bg-gray-900">
           <AboutSection />
         </section>
         <Divider textKey="divider.sector" />
-        <section id="sectors">
+        <section id="sectors" className="dark:bg-gray-900">
           <SectorsSection />
         </section>
         <Divider textKey="divider.partner" />
         <PartnersSection />
         <Divider textKey="divider.locations" />
-        <section id="locations">
+        <section id="locations" className="dark:bg-gray-900">
           <LocationsSection />
         </section>
         <Divider textKey="divider.contactUs" />
-        <section id="contact">
+        <section id="contact" className="dark:bg-gray-900">
           <ContactSection />
         </section>
         <Footer />

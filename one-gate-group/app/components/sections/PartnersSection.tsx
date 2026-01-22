@@ -19,32 +19,33 @@ export default function PartnersSection() {
   }, []);
   
   return (
-    <section className="py-16 lg:py-20 bg-white">
+    <section className="py-16 lg:py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 
-            className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+            className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4"
             data-aos="fade-up"
           >
             {t('partners.title')}
           </h2>
           <p 
-            className="text-lg text-gray-700"
+            className="text-lg text-gray-700 dark:text-gray-300"
             data-aos="fade-up"
             data-aos-delay="200"
           >
             {t('partners.subtitle')}
           </p>
         </div>
+      </div>
 
-        {/* Logo Loop Container */}
-        <div 
-          className="relative overflow-hidden py-8"
-          data-aos="fade-up"
-          data-aos-delay="400"
-          style={{ pointerEvents: 'none' }}
-        >
+      {/* Logo Loop Container - Full Width */}
+      <div 
+        className="relative overflow-hidden py-8 bg-white"
+        data-aos="fade-up"
+        data-aos-delay="400"
+        style={{ pointerEvents: 'none' }}
+      >
           {/* Scrolling Logos */}
           <div className="flex animate-scroll gap-16 items-center min-w-max" style={{ animationPlayState: 'running' }}>
             {/* First set of logos */}
@@ -81,7 +82,6 @@ export default function PartnersSection() {
             ))}
           </div>
         </div>
-      </div>
     </section>
   );
 }
