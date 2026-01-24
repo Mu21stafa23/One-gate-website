@@ -1,53 +1,76 @@
 'use client'
 
-import { useLanguage } from '@/app/context/LanguageContext';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Navbar from '@/app/components/layout/Navbar';
 import Footer from '@/app/components/layout/Footer';
-import Image from 'next/image';
-import coldStorageImage from '@/app/assets/images/sectors/Residential and Industrial Cooling Systems _ Fogco.jpg';
+import Divider from '@/app/components/ui/Divider';
+import PartnersSection from '@/app/components/sections/PartnersSection';
+import LocationsSection from '@/app/components/sections/LocationsSection';
+import Hero from './components/Hero';
+import About from './components/About';
+import Vision from './components/Vision';
+import Mission from './components/Mission';
+import Services from './components/Services';
+import Procedures from './components/Procedures';
+import Specifications from './components/Specifications';
+import CTA from './components/CTA';
 
 export default function ColdStoragePage() {
-  const { language } = useLanguage();
-
-  const content = {
-    en: {
-      title: "Cold Storage",
-      description: "State-of-the-art temperature-controlled storage solutions.",
-      details: "Our cold storage facilities offer advanced temperature-controlled environments for preserving perishable goods, ensuring quality and freshness.",
-    },
-    ar: {
-      title: "التخزين البارد",
-      description: "حلول تخزين متطورة يتم التحكم في درجة حرارتها.",
-      details: "توفر منشآت التخزين البارد لدينا بيئات متقدمة يتم التحكم في درجة حرارتها للحفاظ على السلع القابلة للتلف، مما يضمن الجودة والنضارة.",
-    }
-  };
-
-  const text = content[language];
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100,
+    });
+  }, []);
 
   return (
     <>
       <Navbar />
-      <main className="min-h-screen pt-24 pb-16">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">{text.title}</h1>
-            <p className="text-xl text-gray-600">{text.description}</p>
-          </div>
-          
-          <div className="relative w-full h-[400px] mb-8 rounded-lg overflow-hidden">
-            <Image
-              src={coldStorageImage}
-              alt={text.title}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-
-          <div className="prose max-w-none">
-            <p className="text-lg leading-relaxed">{text.details}</p>
-          </div>
-        </div>
+      <main className="min-h-screen">
+        <Hero />
+        <Divider textKey="divider.whoWeAre" />
+        <section id="about" data-aos="fade-up">
+          <About />
+        </section>
+        <Divider textKey="divider.ourVision" />
+        <section id="vision" data-aos="fade-up">
+          <Vision />
+        </section>
+        <Divider textKey="divider.ourMission" />
+        <section id="mission" data-aos="fade-up">
+          <Mission />
+        </section>
+        <Divider textKey="divider.ourProposals" />
+        <section id="services" data-aos="fade-up">
+          <Services />
+        </section>
+        <Divider textKey="divider.procedures" />
+        <section id="procedures" data-aos="fade-up">
+          <Procedures />
+        </section>
+        <Divider textKey="divider.technical" />
+        <section id="specifications" data-aos="fade-up">
+          <Specifications />
+        </section>
+        <Divider textKey="divider.partner" />
+        <section id="partners" className="relative isolate overflow-hidden bg-white dark:bg-gray-900" data-aos="fade-up">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.blue.100),transparent)] dark:bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.500),transparent)] opacity-30 dark:opacity-10" />
+          <div className="absolute inset-y-0 right-1/2 -z-10 w-[200%] origin-bottom-left skew-x-[-30deg] bg-gray-50 dark:bg-gray-900 shadow-xl ring-1 shadow-gray-200/50 dark:shadow-indigo-500/5 ring-gray-200/50 dark:ring-white/5 sm:mr-0 lg:mr-0 xl:origin-center" />
+          <PartnersSection />
+        </section>
+        <Divider textKey="divider.locations" />
+        <section id="locations" className="relative isolate overflow-hidden bg-white dark:bg-gray-900" data-aos="fade-up">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.blue.100),transparent)] dark:bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.500),transparent)] opacity-30 dark:opacity-10" />
+          <div className="absolute inset-y-0 right-1/2 -z-10 w-[200%] origin-bottom-left skew-x-[-30deg] bg-gray-50 dark:bg-gray-900 shadow-xl ring-1 shadow-gray-200/50 dark:shadow-indigo-500/5 ring-gray-200/50 dark:ring-white/5 sm:mr-0 lg:mr-0 xl:origin-center" />
+          <LocationsSection />
+        </section>
+        <Divider textKey="divider.storeWithUs" />
+        <section id="contact" data-aos="fade-up">
+          <CTA />
+        </section>
       </main>
       <Footer />
     </>

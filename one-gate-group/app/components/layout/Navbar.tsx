@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { Bars3Icon, XMarkIcon, ChevronDownIcon, SunIcon, MoonIcon } from '@heroicons/react/24/outline'
 import oneGateGroupLogo from '@/app/assets/images/logos/logo onegate.png'
 import { useLanguage } from '@/app/context/LanguageContext'
@@ -12,14 +13,33 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
   const { language, setLanguage, t } = useLanguage()
+  const pathname = usePathname()
 
-  const navbarNavigation = [
-    { name: t('nav.home'), href: '#home' },
-    { name: t('nav.about'), href: '#about' },
-    { name: t('nav.sector'), href: '#sectors' },
-    { name: t('nav.location'), href: '#locations' },
-    { name: t('nav.contact'), href: '#contact' },
+  // Check if we're on the homepage
+  const isHomepage = pathname === '/' || pathname === ''
+  const isColdStoragePage = pathname === '/sectors/cold-storage'
+
+  // Navigation for cold storage page
+  const coldStorageNavigation = [
+    { name: 'About', href: '#about' },
+    { name: 'Mission', href: '#mission' },
+    { name: 'Services', href: '#services' },
+    { name: 'Procedures', href: '#procedures' },
+    { name: 'Specifications', href: '#specifications' },
+    { name: 'Locations', href: '#locations' },
+    { name: 'Contact', href: '#contact' },
   ]
+
+  // Navigation for homepage
+  const homepageNavigation = [
+    { name: t('nav.home'), href: isHomepage ? '#home' : '/#home' },
+    { name: t('nav.about'), href: isHomepage ? '#about' : '/#about' },
+    { name: t('nav.sector'), href: isHomepage ? '#sectors' : '/#sectors' },
+    { name: t('nav.location'), href: isHomepage ? '#locations' : '/#locations' },
+    { name: t('nav.contact'), href: isHomepage ? '#contact' : '/#contact' },
+  ]
+
+  const navbarNavigation = isColdStoragePage ? coldStorageNavigation : homepageNavigation
 
   const toggleLanguage = () => {
     setLanguage(language === 'en' ? 'ar' : 'en')
@@ -64,7 +84,7 @@ export default function Navbar() {
         {/* Logo on the left */}
         <div className="flex py-2" style={{ perspective: '1200px' }}>
           <Link 
-            href="#home" 
+            href={isHomepage ? '#home' : '/'} 
             className="relative group transition-transform duration-700 ease-out" 
             style={{ transformStyle: 'preserve-3d' }}
           >
@@ -114,7 +134,7 @@ export default function Navbar() {
             <a
               key={item.name}
               href={item.href}
-              className={`text-lg font-semibold uppercase border-b-2 border-transparent hover:border-yellow-400 transition-colors ${isScrolled ? 'text-gray-900 dark:text-white hover:text-gray-700 dark:hover:text-gray-300' : 'text-white hover:text-white/80'}`}
+              className={`${isColdStoragePage ? 'text-sm' : 'text-lg'} font-semibold uppercase border-b-2 border-transparent hover:border-yellow-400 transition-colors ${isScrolled ? 'text-gray-900 dark:text-white hover:text-gray-700 dark:hover:text-gray-300' : 'text-white hover:text-white/80'}`}
             >
               {item.name}
             </a>
@@ -152,7 +172,7 @@ export default function Navbar() {
         <div className="fixed inset-0 z-50 lg:hidden bg-black/30">
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm">
             <div className="flex items-center justify-between mb-6">
-              <Link href="#home" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
+              <Link href={isHomepage ? '#home' : '/'} className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
                 <span className="sr-only">One Gate Group</span>
                 <Image 
                   src={oneGateGroupLogo}
