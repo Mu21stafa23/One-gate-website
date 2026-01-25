@@ -1,4 +1,7 @@
+
 'use client'
+
+import { ReactNode } from 'react';
 
 import Navbar from '@/app/components/layout/Navbar';
 import Footer from '@/app/components/layout/Footer';
@@ -8,7 +11,7 @@ import Footer from '@/app/components/layout/Footer';
 import { useState, useEffect } from 'react';
 
 // Fade In Animation Component
-const FadeIn = ({ children, delay = 0 }) => {
+const FadeIn = ({ children, delay = 0 }: { children: ReactNode; delay?: number }) => {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), delay);
