@@ -206,7 +206,7 @@ export default function Navbar() {
                   {item.name}
                 </a>
               ))}
-              {/* Theme switcher for mobile */}
+              {/* Theme switcher for mobile menu */}
               <button
                 onClick={() => {
                   toggleTheme();
@@ -216,17 +216,22 @@ export default function Navbar() {
                 aria-label="Toggle theme"
               >
                 {theme === 'light' ? (
-                  <MoonIcon className="size-5" />
+                  <>
+                    <MoonIcon className="size-5" />
+                    {t('Dark Mode')}
+                  </>
                 ) : (
-                  <SunIcon className="size-5" />
+                  <>
+                    <SunIcon className="size-5" />
+                    {t('Light Mode')}
+                  </>
                 )}
-                <span>{theme === 'light' ? 'Dark Mode' : 'Light Mode'}</span>
               </button>
-              {/* Language switcher for mobile */}
+              {/* Language switcher for mobile menu */}
               <button
                 onClick={() => {
-                  toggleLanguage()
-                  setMobileMenuOpen(false)
+                  toggleLanguage();
+                  setMobileMenuOpen(false);
                 }}
                 className="block w-full text-left rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-100"
               >
