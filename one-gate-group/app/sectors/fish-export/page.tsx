@@ -1,54 +1,49 @@
-'use client'
+"use client"
 
-import { useLanguage } from '@/app/context/LanguageContext';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import Navbar from '@/app/components/layout/Navbar';
 import Footer from '@/app/components/layout/Footer';
-import Image from 'next/image';
-import fishExportImage from '@/app/assets/images/sectors/Fish at market stock image_ Image of food, ocean, pisces - 13192441.jpg';
+import Divider from '@/app/components/ui/Divider';
+import PartnersSection from '@/app/components/sections/PartnersSection';
+import LocationsSection from '@/app/components/sections/LocationsSection';
+import Hero from './components/Hero';
+import About from './components/About';
+import CTA from './components/CTA';
 
 export default function FishExportPage() {
-  const { language } = useLanguage();
-
-  const content = {
-    en: {
-      title: "Fish Export",
-      description: "Quality seafood export with global reach.",
-      details: "We specialize in seafood export services, delivering fresh and frozen fish products to international markets with the highest quality standards.",
-    },
-    ar: {
-      title: "تصدير الأسماك",
-      description: "تصدير المأكولات البحرية عالية الجودة مع انتشار عالمي.",
-      details: "نحن متخصصون في خدمات تصدير المأكولات البحرية، ونقوم بتوصيل منتجات الأسماك الطازجة والمجمدة إلى الأسواق الدولية بأعلى معايير الجودة.",
-    }
-  };
-
-  const text = content[language];
-
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100,
+    });
+  }, []);
   return (
     <>
       <Navbar />
-      <main className="min-h-screen pt-24 pb-16">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">{text.title}</h1>
-            <p className="text-xl text-gray-600">{text.description}</p>
-          </div>
-          
-          <div className="relative w-full h-[400px] mb-8 rounded-lg overflow-hidden">
-            <Image
-              src={fishExportImage}
-              alt={text.title}
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-
-          <div className="prose max-w-none">
-            <p className="text-lg leading-relaxed">{text.details}</p>
-          </div>
-        </div>
+      <main className="min-h-screen">
+        <Hero />
+        <Divider textKey="divider.whoWeAre" />
+        <section id="about">
+          <About />
+        </section>
+        <Divider textKey="divider.partner" />
+        <section id="partners" className="relative isolate overflow-hidden bg-white dark:bg-gray-900" data-aos="fade-up">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.blue.100),transparent)] dark:bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.500),transparent)] opacity-30 dark:opacity-10" />
+          <div className="absolute inset-y-0 right-1/2 -z-10 w-[200%] origin-bottom-left skew-x-[-30deg] bg-gray-50 dark:bg-gray-900 shadow-xl ring-1 shadow-gray-200/50 dark:shadow-indigo-500/5 ring-gray-200/50 dark:ring-white/5 sm:mr-0 lg:mr-0 xl:origin-center" />
+          <PartnersSection />
+        </section>
+        <Divider textKey="divider.locations" />
+        <section id="locations" className="relative isolate overflow-hidden bg-white dark:bg-gray-900" data-aos="fade-up">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.blue.100),transparent)] dark:bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.500),transparent)] opacity-30 dark:opacity-10" />
+          <div className="absolute inset-y-0 right-1/2 -z-10 w-[200%] origin-bottom-left skew-x-[-30deg] bg-gray-50 dark:bg-gray-900 shadow-xl ring-1 shadow-gray-200/50 dark:shadow-indigo-500/5 ring-gray-200/50 dark:ring-white/5 sm:mr-0 lg:mr-0 xl:origin-center" />
+          <LocationsSection />
+        </section>
       </main>
+      <CTA />
       <Footer />
     </>
   );

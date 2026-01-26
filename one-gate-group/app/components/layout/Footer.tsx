@@ -133,27 +133,44 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">{t('contact.title')}</h3>
             <ul className="space-y-3 text-gray-400">
-              <li className="flex items-start">
-                <svg className="w-5 h-5 mr-2 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              <li className="flex items-center">
+                <svg className="w-5 h-5 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span>Khartoum  City, Sudan</span>
+                <a href="tel:+249927777727" className="hover:text-white transition-colors">
+                  +249927777727
+                </a>
               </li>
               <li className="flex items-center">
                 <svg className="w-5 h-5 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <a href="tel:+249000000" className="hover:text-white transition-colors">
-                  +2490000000
+                <a href="tel:+249912645455" className="hover:text-white transition-colors">
+                  +249912645455
+                </a>
+              </li>
+              <li className="flex items-center">
+                <svg className="w-5 h-5 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <a href="tel:+249121003305" className="hover:text-white transition-colors">
+                  +249121003305
                 </a>
               </li>
               <li className="flex items-center">
                 <svg className="w-5 h-5 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href="mailto:info@onegategroup.dj" className="hover:text-white transition-colors">
-                  info@onegategroup.sd
+                <a href="mailto:ahmedonegate@gmail.com" className="hover:text-white transition-colors">
+                  ahmedonegate@gmail.com
+                </a>
+              </li>
+              <li className="flex items-center">
+                <svg className="w-5 h-5 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16.72 12.93a10.94 10.94 0 01-4.24-4.24l2.06-2.06a1 1 0 00.24-1.01l-.48-2.27A1 1 0 0013.31 3h-2.6a1 1 0 00-1 .76l-.48 2.27a1 1 0 00.24 1.01l2.06 2.06a10.94 10.94 0 01-4.24 4.24l-2.06-2.06a1 1 0 00-1.01-.24l-2.27.48A1 1 0 003 10.69v2.6a1 1 0 00.76 1l2.27.48a1 1 0 001.01-.24l2.06-2.06a10.94 10.94 0 014.24 4.24l-2.06 2.06a1 1 0 00-.24 1.01l.48 2.27a1 1 0 001 .76h2.6a1 1 0 001-.76l.48-2.27a1 1 0 00-.24-1.01l-2.06-2.06a10.94 10.94 0 014.24-4.24l2.06 2.06a1 1 0 001.01.24l2.27-.48a1 1 0 00.76-1v-2.6a1 1 0 00-.76-1l-2.27-.48a1 1 0 00-1.01.24l-2.06 2.06z" />
+                </svg>
+                <a href="https://wa.me/249927777727" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  WhatsApp: +249927777727
                 </a>
               </li>
             </ul>

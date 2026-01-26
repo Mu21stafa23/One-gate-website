@@ -26,11 +26,11 @@ export default function Divider({ textKey }: DividerProps) {
           className="relative flex items-center justify-center"
           data-aos="fade-up"
         >
-          {/* Black line */}
-          <div className="absolute inset-x-0 top-1/2 h-0.5 bg-black dark:bg-gray-600"></div>
+          {/* Subtle line */}
+          <div className="absolute inset-x-0 top-1/2 h-0.5 bg-gray-200 dark:bg-gray-600"></div>
           
           {/* Text in the middle */}
-          <span className="relative bg-white dark:bg-gray-900 px-6 text-lg lg:text-xl font-bold text-black dark:text-white">
+          <span className="relative bg-white dark:bg-gray-900 px-6 text-lg lg:text-xl font-bold text-gray-900 dark:text-white">
             {t(textKey)}
           </span>
         </div>
